@@ -1,0 +1,30 @@
+{
+  "name": "express-simple-server",
+  "version": "1.0.0",
+  "description": "Express-Simple-Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximys963/express-simple-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximys963/express-simple-server/issues"
+  },
+  "homepage": "https://github.com/maximys963/express-simple-server#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
