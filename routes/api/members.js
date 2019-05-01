@@ -8,7 +8,7 @@ router.get('/', (req, res) => res.json(members));
 
 
 // Members API Routes
-router.get('/:id', (req,res) => {
+router.get('/:id', (req, res) => {
     const found = members.some(member => member.id === parseInt(req.params.id));
 
     if(found){
@@ -31,8 +31,8 @@ router.post('/', (req, res) => {
     if(!newMember.name || !newMember.email){
        return res.status(400).json({ msg: 'Please include email and name ^_^' });
     }
-        members = [... members, newMember];
-        res.json(members);
+        members = members.push(newMember);
+        res.redirect('/');
 });
 
 
@@ -57,4 +57,18 @@ router.put('/:id', (req,res) => {
 
 
 //Delete member
+router.delete('/:id', (req,res) => {
+    const found = members.some(member => member.id === parseInt(req.params.id));
+
+    if(found){
+        res.json({
+            msg: "member deleted",
+            members: members.filter(member => member.id !== parseInt(req.params.id))
+        });
+    }else{
+        res.status(400).json({msg: `no member with id of ${req.params.id}`});
+    }
+});
+
+
 module.exports = router;
